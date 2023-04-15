@@ -27,28 +27,50 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
-
-
-Write the detailed procedure here 
+1.Use module projname(input,output) to start the Verilog programmming. 2.Assign inputs and outputs using the word input and output respectively. 3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression. 4.Use each output to represnt onre for differnce and the other for borrow. 5.End the verilog program using keyword endmodule.
 
 
 ## Program:
 /*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+## HALF SUBRACTOR:
+module hh(a,b,d,bo);
+input a,b;
+output d,bo;
+wire x;
+xor (d, a,b);
+not(x,a);
+and(bo,x,b);
+endmodule
+
+## FULL SUBRACTOR:
+module hh (a,b,bin,diff,bout);
+input a,b,bin;
+output diff,bout;
+wire p,q,r,s,t;
+xor(p,a,b);
+not(q,a);
+and(r,q,b);
+xor(diff,p,bin);
+not(s,p);
+and(t,s,bin);
+or(bout,t,r);
+endmodule
+Developed by: G.PAVANA
+RegisterNumber:  212222230105
 */
 
 ## Output:
-
-## Truthtable
-
-
-
 ##  RTL realization
-
+## HALF SUBRACTOR:
+![Implementation-of-Half-subtractor-and-Full-subtractor-circuit](hs.png)
+## FULL SUBRACTOR:
+![Implementation-of-Half-subtractor-and-Full-subtractor-circuit](fs.png)
 
 ## Timing diagram 
+## HALF SUBRACTOR:
+![Implementation-of-Half-subtractor-and-Full-subtractor-circuit](hs1.png)
+## FULL SUBRACTOR:
+![Implementation-of-Half-subtractor-and-Full-subtractor-circuit](fs1.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
