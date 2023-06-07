@@ -52,14 +52,13 @@ endmodule
 module hh (a,b,bin,diff,bout);
 input a,b,bin;
 output diff,bout;
-wire p,q,r,s,t;
-xor(p,a,b);
+wire p,q,r,t;
 not(q,a);
 and(r,q,b);
+and(t,q,bin);
+xor(p,a,b);
 xor(diff,p,bin);
-not(s,p);
-and(t,s,bin);
-or(bout,t,r);
+or(bout,r,t);
 endmodule
 Developed by: G.PAVANA
 RegisterNumber:  212222230105
