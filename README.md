@@ -52,10 +52,11 @@ endmodule
 module hh (a,b,bin,diff,bout);
 input a,b,bin;
 output diff,bout;
-wire p,q,r,t;
+wire p,q,r,s,t;
 not(q,a);
 and(r,q,b);
 and(t,q,bin);
+and(s,a,b);
 xor(p,a,b);
 xor(diff,p,bin);
 or(bout,r,t);
