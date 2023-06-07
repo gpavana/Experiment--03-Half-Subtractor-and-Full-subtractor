@@ -56,10 +56,10 @@ wire p,q,r,s,t;
 not(q,a);
 and(r,q,b);
 and(t,q,bin);
-and(s,a,b);
+and(s,b,bin);
 xor(p,a,b);
 xor(diff,p,bin);
-or(bout,r,t);
+or(bout,r,t,s);
 endmodule
 Developed by: G.PAVANA
 RegisterNumber:  212222230105
